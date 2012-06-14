@@ -1,0 +1,20 @@
+﻿body {
+}
+
+body
+{
+	padding:80px;
+}
+.carousel-image img
+{
+    width: 330px;
+    height: 303px;
+}
+#input-search
+{
+    margin: 8px;
+}
+.modal
+{
+    margin-top: -280px !important;
+}

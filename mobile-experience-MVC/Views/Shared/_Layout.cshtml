@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <script type="text/javascript" src="../scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../scripts/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../scripts/bootstrap-collapse.js"></script>
+    <script type="text/javascript" src="../scripts/bootstrap-typeahead.js"></script>
+    <script type="text/javascript" src="../scripts/bootstrap-carousel.js"></script>
+    <script type="text/javascript" src="../scripts/bootstrap-transition.js"></script>
+    <script type="text/javascript" src="../scripts/bootstrap-modal.js"></script>
+    <link href="../content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../content/style.css" rel="stylesheet" />
+    <link href="../content/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="../content/zocial.css" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/modernizr-2.0.6-development-only.js")" type="text/javascript"></script>
+
+        <script>
+            $(document).ready(function () {
+                if (window.location.pathname.indexOf("default.aspx") != -1 || window.location.pathname == "/") {
+                    $("#link-home").addClass("active");
+                }
+                if (window.location.pathname.indexOf("upcoming-events.aspx") != -1) {
+                    $("#link-upcoming-events").addClass("active");
+                }
+                if (window.location.pathname.indexOf("my-stage-ae.aspx") != -1) {
+                    $("#link-my-stage-ae").addClass("active");
+                }
+                if (window.location.pathname.indexOf("friends.aspx") != -1) {
+                    $("#link-friends").addClass("active");
+                }
+            });
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="span8 offset2">
+                <div class="navbar navbar-fixed-top">
+                    <div class="navbar-inner">
+                        <div class="container">
+                            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span
+                                class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                            </a><a href="/default.aspx" class="brand">Stage AE</a>
+                            <div class="nav-collapse">
+                                <ul class="nav">
+                                    <li id="link-home"><a href="/default.aspx">Home</a></li>
+                                    <li id="link-upcoming-events"><a href="/upcoming-events.aspx">Upcoming Events</a>
+                                    </li>
+                                    <li id="link-my-stage-ae"><a href="/my-stage-ae.aspx">My Stage AE</a></li>
+                                    <li id="link-friends"><a href="/friends.aspx">Friends</a></li>
+                                </ul>
+                                <form class="navbar-search">
+                                <input id="input-search" type="text" class="search-query pull-right" placeholder="Search">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span8 offset2">
+                <header>
+                </header>
+                <section id="main">
+                    @RenderBody()
+                </section>
+                <footer>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#input-search").keypress(function (e) {
+                if (e.keyCode == 13) {
+                    window.location = "/search.aspx";
+                    return false;
+                }
+            });
+            $("ul.typeahead").click(function (e) {
+                window.location = "/search.aspx";
+                return false;
+            });
+        });
+
+        var dataSource = ["Maroon 5", "The Wanted", "Wiz Khalifa", "Rihanna", "Linkin Park", "Mumford & Sons", "Train", "Tyga", "Bon Iver"];
+        var items = 4;
+        $('#input-search').typeahead({ source: dataSource });
+    </script>
+
+</body>
+</html>
