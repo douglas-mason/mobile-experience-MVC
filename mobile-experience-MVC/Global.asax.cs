@@ -34,7 +34,7 @@ namespace mobile_experience_MVC
 
         protected void Application_Start()
         {
-            Database.SetInitializer(new EventContextInitializer());
+            Database.SetInitializer(new StageDBInitializer());
 
             AreaRegistration.RegisterAllAreas();
 
@@ -46,14 +46,15 @@ namespace mobile_experience_MVC
         }
     }
 
-    public class EventContextInitializer : DropCreateDatabaseIfModelChanges<EventContext>
+    public class StageDBInitializer : DropCreateDatabaseIfModelChanges<StageDB>
     {
-        protected override void Seed(EventContext context)
+        protected override void Seed(StageDB context)
         {
             base.Seed(context);
 
             context.StageAEEvents.Add(new StageAEEvent
             {
+                Id = "1",
                 Artist = "Maroon 5",
                 Date = "5/26/2012",
                 Time = "8:00",
@@ -61,6 +62,7 @@ namespace mobile_experience_MVC
             });
             context.StageAEEvents.Add(new StageAEEvent
             {
+                Id = "2",
                 Artist = "Rihanna",
                 Date = "6/15/2012",
                 Time = "7:00",
@@ -68,6 +70,7 @@ namespace mobile_experience_MVC
             });
             context.StageAEEvents.Add(new StageAEEvent
             {
+                Id = "3",
                 Artist = "LMFAO",
                 Date = "7/4/2012",
                 Time = "6:00",

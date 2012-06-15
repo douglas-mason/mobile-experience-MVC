@@ -11,7 +11,7 @@ namespace mobile_experience_MVC.Controllers
     {
         //
         // GET: /Events/
-        EventContext _db = new EventContext();
+        StageDB _db = new StageDB();
 
         public ActionResult Index()
         {
