@@ -19,5 +19,25 @@ namespace mobile_experience_MVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            //var model = from stageEvent in _db.StageAEEvents
+              //           where stageEvent.Id == id
+                //         select stageEvent;
+            var model = _db.StageAEEvents.Single(s => s.Id == id);
+
+            return View(model);
+        }
+
+        public ActionResult Purchase(string id)
+        {
+            var model = _db.StageAEEvents.Find(id);
+            return View(model);
+        }
+
+        public ActionResult Confirmation()
+        {
+            return View();
+        }
     }
 }

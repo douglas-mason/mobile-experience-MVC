@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Thank You";
+}
+
+    <div class="alert alert-success">
+        <strong>Purchase Successful!</strong><br />Email confirmation has been sent.
+    </div>
+    <img src="@Url.Content("~/content/img/share-on-facebook.png")" />
+    @Html.ActionLink("View My Stage AE", "Index", "MyStageAE", null, new { @class = "btn btn-primary" })

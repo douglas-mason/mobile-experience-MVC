@@ -1,0 +1,17 @@
+﻿@model mobile_experience_MVC.Models.StageAEEvent
+
+@{
+    ViewBag.Title = "Event Details";
+}
+    <div class="row">
+        <div class="span8">
+            <h1>Event Details: </h1><h2>
+                @Model.Artist</h2>
+            <p>Come and enjoy hit songs from popular artist
+                @Model.Artist. Doors open an hour early. Listen to 96.1 Kiss FM for chances
+                to win backstage passes.</p>
+            <p>Date: @Model.Date<br />Time: @Model.Time<br />Venue: @Model.Venue</p>
+            @*<a href="/buy-ticket.aspx" class="btn btn-primary">Buy Ticket</a>*@
+            @Html.ActionLink("Buy Ticket", "Purchase", new { id = Model.Id }, new { @class = "btn btn-primary" })
+        </div>
+    </div>
