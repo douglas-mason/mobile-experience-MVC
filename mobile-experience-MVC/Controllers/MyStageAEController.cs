@@ -14,7 +14,7 @@ namespace mobile_experience_MVC.Controllers
 
         StageDB _db = new StageDB();
 
-        public ActionResult Index(int id)
+        public ActionResult MyEvents(int id)
         {
             //var userEventId = _db.UserEvents.Where(e => e.userId == id).Select(i => id).ToArray<int>();
             var userEventId = (from uEvent in _db.UserEvents

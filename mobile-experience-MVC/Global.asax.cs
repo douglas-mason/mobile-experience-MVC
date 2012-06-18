@@ -24,10 +24,10 @@ namespace mobile_experience_MVC
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-           // routes.MapRoute(
+            //routes.MapRoute(
             //    "Events", // Route name
-              //  "{controller}/{action}/{id}", // URL with parameters
-                //new { controller = "Events", action = "Details", id = UrlParameter.Optional } // Parameter defaults
+            //    "MyStageAE/MyEvents/{id}", // URL with parameters
+            //    new { controller = "Events", action = "MyEvents", id = 100 } // Parameter defaults
             //);
 
             routes.MapRoute(
@@ -52,7 +52,7 @@ namespace mobile_experience_MVC
         }
     }
 
-    public class StageDBInitializer : DropCreateDatabaseAlways<StageDB>
+    public class StageDBInitializer : DropCreateDatabaseIfModelChanges<StageDB>
     {
         protected override void Seed(StageDB context)
         {

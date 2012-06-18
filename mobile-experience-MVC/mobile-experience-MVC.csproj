@@ -210,7 +210,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\MyStageAE.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
-    <Content Include="Views\MyStageAE\Index.cshtml" />
+    <Content Include="Views\MyStageAE\MyEvents.cshtml" />
     <Content Include="Views\Friends\Index.cshtml" />
     <Content Include="Views\Events\Details.cshtml" />
     <Content Include="Views\Events\Purchase.cshtml" />
