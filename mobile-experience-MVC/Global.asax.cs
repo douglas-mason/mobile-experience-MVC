@@ -52,7 +52,7 @@ namespace mobile_experience_MVC
         }
     }
 
-    public class StageDBInitializer : DropCreateDatabaseIfModelChanges<StageDB>
+    public class StageDBInitializer : DropCreateDatabaseAlways<StageDB>
     {
         protected override void Seed(StageDB context)
         {
@@ -82,6 +82,22 @@ namespace mobile_experience_MVC
                 Date = "7/4/2012",
                 Time = "6:00",
                 Venue = "North Shore"
+            });
+            context.StageAEEvents.Add(new StageAEEvent
+            {
+                Id = 4,
+                Artist = "Casting Crowns",
+                Date = "8/15/2012",
+                Time = "7:00",
+                Venue = "South Side"
+            });
+            context.StageAEEvents.Add(new StageAEEvent
+            {
+                Id = 5,
+                Artist = "Third Day",
+                Date = "8/25/2012",
+                Time = "8:00",
+                Venue = "South Side"
             });
             #endregion
             #region Users
@@ -172,6 +188,23 @@ namespace mobile_experience_MVC
                 id = 90,
                 eventId = 3,
                 userId = 400
+            });
+            #endregion
+            #region Venues
+            context.Venues.Add(new Venue
+            {
+                Id = 11,
+                Name = "North Side"
+            });
+            context.Venues.Add(new Venue
+            {
+            Id = 22,
+            Name = "South Side"
+            });
+            context.Venues.Add(new Venue
+            {
+                Id = 33,
+                Name = "Monroeville"
             });
             #endregion
         }

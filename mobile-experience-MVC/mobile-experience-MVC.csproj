@@ -110,6 +110,7 @@
     <Compile Include="Models\StageAEEvent.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserEvent.cs" />
+    <Compile Include="Models\Venue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

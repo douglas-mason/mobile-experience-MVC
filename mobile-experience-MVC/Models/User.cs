@@ -15,6 +15,7 @@ namespace mobile_experience_MVC.Models
         public string email { get; set; }
         [DataType(DataType.Password)]
         public string password { get; set; }
+        public string description { get; set; }
         public string relationships { get; set; }
     }
 }

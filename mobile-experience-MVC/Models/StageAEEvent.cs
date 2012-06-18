@@ -15,5 +15,6 @@ namespace mobile_experience_MVC.Models
         public string Date { get; set; }
         public string Time { get; set; }
         public string Venue { get; set; }
+        public string Description { get; set; }
     }
 }
